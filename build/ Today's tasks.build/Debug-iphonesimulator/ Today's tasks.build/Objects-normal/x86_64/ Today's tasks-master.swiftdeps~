@@ -1,0 +1,13 @@
+version: "Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+options: "6d91061a2e2eee27817286825f71fb7b"
+build_time: [1607952571, 270743000]
+inputs:
+  "/Users/Darya/Desktop/Developer/swift projects/Today/Today's tasks/TableViewHeader.swift": [1607623971, 0]
+  "/Users/Darya/Desktop/Developer/swift projects/Today/Today's tasks/AddViewController.swift": [1607952092, 655334761]
+  "/Users/Darya/Desktop/Developer/swift projects/Today/Today's tasks/TableViewCell.swift": [1607952570, 944951187]
+  "/Users/Darya/Desktop/Developer/swift projects/Today/Today's tasks/TableViewController.swift": [1607952571, 73879730]
+  "/Users/Darya/Desktop/Developer/swift projects/Today/Today's tasks/SceneDelegate.swift": [1594143765, 74322592]
+  "/Users/Darya/Desktop/Developer/swift projects/Today/Today's tasks/AppDelegate.swift": [1607617590, 534280281]
+  "/Users/Darya/Desktop/Developer/swift projects/Today/build/ Today's tasks.build/Debug-iphonesimulator/ Today's tasks.build/DerivedSources/CoreDataGenerated/Today's_Tasks/Task+CoreDataClass.swift": [1607952326, 129772927]
+  "/Users/Darya/Desktop/Developer/swift projects/Today/build/ Today's tasks.build/Debug-iphonesimulator/ Today's tasks.build/DerivedSources/CoreDataGenerated/Today's_Tasks/Task+CoreDataProperties.swift": [1607952326, 152644905]
+  "/Users/Darya/Desktop/Developer/swift projects/Today/build/ Today's tasks.build/Debug-iphonesimulator/ Today's tasks.build/DerivedSources/CoreDataGenerated/Today's_Tasks/Today's_Tasks+CoreDataModel.swift": [1607952326, 115510022]
