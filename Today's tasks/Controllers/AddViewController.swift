@@ -12,8 +12,11 @@ import CoreData
 class AddViewController: UIViewController {
     
     let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var previousVC = TableViewController()
-
+    
+    var previousVC: TableViewController!
+    
+    let model = Model()
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var saveBtn: UIButton!
@@ -22,13 +25,15 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        previousVC = TableViewController()
+        
         textField.becomeFirstResponder()
         textField.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(with:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(with:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        saveBtn.layer.cornerRadius = 20
+        saveBtn.layer.cornerRadius = saveBtn.bounds.height / 2
     }
 
     /*
@@ -64,43 +69,14 @@ class AddViewController: UIViewController {
         }
     }
     
-    //MARK: Saving data
-    
-    func save(_ title: String) {
-        
-        let task = Task(context: managedContext)
-        task.title = title
-        task.setValue(title, forKey: "title")
-        task.duration = Int16(durationControl.selectedSegmentIndex)
-        task.isCompleted = false
-        
-        do {
-            try self.managedContext.save()
-            
-            switch task.duration {
-            case 0:
-                today.append(task)
-            case 1:
-                thisWeek.append(task)
-            case 2:
-                thisMonth.append(task)
-            default:
-                print("error: unknown duration: \(task.duration)")
-            }
-            print("success!! task is saved: \(task)")
-            
-        } catch let error as NSError {
-            print("could not save. \(error), \(error.userInfo)")
-        }
-    }
-    
-    
     @IBAction func saveBtnTapped(_ sender: UIButton) {
         animateView(sender)
         guard textField.text != nil && textField.text != "" else { return }
         guard let taskToSave = textField.text else { return }
         
-        save(taskToSave)
+        model.save(taskToSave, duration: durationControl.selectedSegmentIndex, managedContext: managedContext) {_ in
+            previousVC.tableView.reloadData()
+        }
         previousVC.tableView.reloadData()
         navigationController?.popViewController(animated: true)
     }
@@ -114,7 +90,6 @@ class AddViewController: UIViewController {
             }
         }
     }
-    
     
 }
 

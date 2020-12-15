@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewHeader: UITableViewHeaderFooterView {
 
-    let durationLabel = UILabel()
+    let titleLabel = UILabel()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -23,18 +23,20 @@ class TableViewHeader: UITableViewHeaderFooterView {
 
     fileprivate func configureView() {
         
-        contentView.backgroundColor = .lightGray
+        contentView.backgroundColor = .white
         
-        durationLabel.textColor = .white
-        durationLabel.font = .boldSystemFont(ofSize: 20)
-        durationLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(durationLabel)
+        titleLabel.textColor = .systemBlue
+        titleLabel.font = .systemFont(ofSize: 22, weight: .bold)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            durationLabel.heightAnchor.constraint(equalToConstant: 28),
-            durationLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor, constant: 8),
-            durationLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            titleLabel.heightAnchor.constraint(equalToConstant: 28),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor, constant: 0),
+            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
     
 }
+
