@@ -1,5 +1,6 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
+- "CellData"
 - "t"
 - "today"
 - "thisWeek"
@@ -7,8 +8,10 @@ provides-top-level:
 - "completed"
 - "Model"
 provides-nominal:
+- "14_Today_s_tasks8CellDataV"
 - "14_Today_s_tasks5ModelC"
 provides-member:
+- ["14_Today_s_tasks8CellDataV", ""]
 - ["14_Today_s_tasks5ModelC", ""]
 provides-dynamic-lookup:
 - "arrayForSection"
@@ -24,6 +27,7 @@ depends-top-level:
 - "Bool"
 - !private "BooleanLiteralType"
 - "CastingPrecedence"
+- "CellData"
 - "FloatLiteralType"
 - "Int"
 - !private "Int16"
@@ -35,7 +39,7 @@ depends-top-level:
 - "String"
 - "StringLiteralType"
 - "Task"
-- "Void"
+- !private "arrayForSection"
 - "completed"
 - !private "print"
 - "t"
@@ -43,20 +47,23 @@ depends-top-level:
 - "thisMonth"
 - "thisWeek"
 - "today"
+- !private "~="
 depends-member:
 - !private ["s18AdditiveArithmeticP", ""]
 - !private ["s18AdditiveArithmeticP", "init"]
 - !private ["Sa", "append"]
 - !private ["Sa", "filter"]
+- !private ["Sa", "insert"]
 - !private ["SK", ""]
 - !private ["SK", "append"]
 - !private ["SK", "filter"]
-- !private ["SK", "init"]
+- !private ["SK", "insert"]
 - !private ["Sz", ""]
 - !private ["Sz", "init"]
 - !private ["8CloudKit21CKRecordValueProtocolP", "append"]
 - !private ["8CloudKit21CKRecordValueProtocolP", "filter"]
 - !private ["8CloudKit21CKRecordValueProtocolP", "init"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "insert"]
 - !private ["s7CVarArgP", "append"]
 - !private ["s7CVarArgP", "delete"]
 - !private ["s7CVarArgP", "duration"]
@@ -64,18 +71,25 @@ depends-member:
 - !private ["s7CVarArgP", "fetchRequest"]
 - !private ["s7CVarArgP", "filter"]
 - !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "insert"]
 - !private ["s7CVarArgP", "isCompleted"]
 - !private ["s7CVarArgP", "save"]
 - !private ["s7CVarArgP", "title"]
 - !private ["s7CVarArgP", "userInfo"]
+- ["14_Today_s_tasks8CellDataV", "Bool"]
+- ["14_Today_s_tasks8CellDataV", "Task"]
+- ["14_Today_s_tasks8CellDataV", "init"]
+- ["14_Today_s_tasks8CellDataV", "isExpanded"]
+- ["14_Today_s_tasks8CellDataV", "tasks"]
 - !private ["Sl", ""]
 - !private ["Sl", "append"]
 - !private ["Sl", "filter"]
-- !private ["Sl", "init"]
+- !private ["Sl", "insert"]
 - !private ["SL", ""]
 - !private ["SL", "init"]
 - !private ["10Foundation15ContiguousBytesP", "append"]
 - !private ["10Foundation15ContiguousBytesP", "filter"]
+- !private ["10Foundation15ContiguousBytesP", "insert"]
 - !private ["s28CustomDebugStringConvertibleP", "append"]
 - !private ["s28CustomDebugStringConvertibleP", "delete"]
 - !private ["s28CustomDebugStringConvertibleP", "duration"]
@@ -83,6 +97,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "fetchRequest"]
 - !private ["s28CustomDebugStringConvertibleP", "filter"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "insert"]
 - !private ["s28CustomDebugStringConvertibleP", "isCompleted"]
 - !private ["s28CustomDebugStringConvertibleP", "save"]
 - !private ["s28CustomDebugStringConvertibleP", "title"]
@@ -90,6 +105,7 @@ depends-member:
 - !private ["s17CustomReflectableP", "append"]
 - !private ["s17CustomReflectableP", "filter"]
 - !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "insert"]
 - !private ["s23CustomStringConvertibleP", ""]
 - !private ["s23CustomStringConvertibleP", "append"]
 - !private ["s23CustomStringConvertibleP", "appendInterpolation"]
@@ -100,6 +116,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "fetchRequest"]
 - !private ["s23CustomStringConvertibleP", "filter"]
 - !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "insert"]
 - !private ["s23CustomStringConvertibleP", "isCompleted"]
 - !private ["s23CustomStringConvertibleP", "save"]
 - !private ["s23CustomStringConvertibleP", "title"]
@@ -107,14 +124,17 @@ depends-member:
 - !private ["10Foundation12DataProtocolP", ""]
 - !private ["10Foundation12DataProtocolP", "append"]
 - !private ["10Foundation12DataProtocolP", "filter"]
+- !private ["10Foundation12DataProtocolP", "insert"]
 - !private ["Se", "append"]
 - !private ["Se", "filter"]
 - !private ["Se", "init"]
+- !private ["Se", "insert"]
 - !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
 - !private ["s26DefaultStringInterpolationV", "appendLiteral"]
 - !private ["SE", "append"]
 - !private ["SE", "filter"]
 - !private ["SE", "init"]
+- !private ["SE", "insert"]
 - !private ["SQ", ""]
 - !private ["SQ", "append"]
 - !private ["SQ", "delete"]
@@ -123,6 +143,7 @@ depends-member:
 - !private ["SQ", "fetchRequest"]
 - !private ["SQ", "filter"]
 - !private ["SQ", "init"]
+- !private ["SQ", "insert"]
 - !private ["SQ", "isCompleted"]
 - !private ["SQ", "save"]
 - !private ["SQ", "title"]
@@ -132,17 +153,11 @@ depends-member:
 - !private ["s25ExpressibleByArrayLiteralP", "append"]
 - !private ["s25ExpressibleByArrayLiteralP", "filter"]
 - ["s25ExpressibleByArrayLiteralP", "init"]
-- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
-- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "insert"]
 - !private ["s27ExpressibleByIntegerLiteralP", ""]
 - !private ["s27ExpressibleByIntegerLiteralP", "init"]
 - !private ["s32ExpressibleByStringInterpolationP", "StringInterpolation"]
-- !private ["s32ExpressibleByStringInterpolationP", ""]
 - !private ["s32ExpressibleByStringInterpolationP", "init"]
-- !private ["s26ExpressibleByStringLiteralP", ""]
-- !private ["s26ExpressibleByStringLiteralP", "init"]
-- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
-- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["s17FixedWidthIntegerP", "init"]
 - !private ["SH", ""]
 - !private ["SH", "append"]
@@ -152,6 +167,7 @@ depends-member:
 - !private ["SH", "fetchRequest"]
 - !private ["SH", "filter"]
 - !private ["SH", "init"]
+- !private ["SH", "insert"]
 - !private ["SH", "isCompleted"]
 - !private ["SH", "save"]
 - !private ["SH", "title"]
@@ -164,8 +180,7 @@ depends-member:
 - !private ["s5Int16V", "init"]
 - !private ["s25LosslessStringConvertibleP", ""]
 - !private ["s25LosslessStringConvertibleP", "init"]
-- !private ["s10MirrorPathP", "init"]
-- ["14_Today_s_tasks5ModelC", "Bool"]
+- !private ["14_Today_s_tasks5ModelC", "CellData"]
 - ["14_Today_s_tasks5ModelC", "Int"]
 - !private ["14_Today_s_tasks5ModelC", "Int16"]
 - !private ["14_Today_s_tasks5ModelC", "NSError"]
@@ -173,7 +188,6 @@ depends-member:
 - ["14_Today_s_tasks5ModelC", "NSManagedObjectContext"]
 - ["14_Today_s_tasks5ModelC", "String"]
 - ["14_Today_s_tasks5ModelC", "Task"]
-- ["14_Today_s_tasks5ModelC", "Void"]
 - ["14_Today_s_tasks5ModelC", "arrayForSection"]
 - !private ["14_Today_s_tasks5ModelC", "completed"]
 - ["14_Today_s_tasks5ModelC", "deinit"]
@@ -191,8 +205,10 @@ depends-member:
 - !private ["SM", ""]
 - !private ["SM", "append"]
 - !private ["SM", "filter"]
+- !private ["SM", "insert"]
 - !private ["10Foundation19MutableDataProtocolP", "append"]
 - !private ["10Foundation19MutableDataProtocolP", "filter"]
+- !private ["10Foundation19MutableDataProtocolP", "insert"]
 - ["So8NSCodingP", ""]
 - !private ["So8NSCodingP", "delete"]
 - !private ["So8NSCodingP", "fetch"]
@@ -252,55 +268,49 @@ depends-member:
 - !private ["Sk", ""]
 - !private ["Sk", "append"]
 - !private ["Sk", "filter"]
+- !private ["Sk", "insert"]
 - !private ["Sm", ""]
 - !private ["Sm", "append"]
 - !private ["Sm", "filter"]
-- !private ["Sm", "init"]
+- !private ["Sm", "insert"]
 - !private ["s10SIMDScalarP", "init"]
 - !private ["ST", ""]
 - !private ["ST", "append"]
 - !private ["ST", "filter"]
-- !private ["ST", "init"]
+- !private ["ST", "insert"]
 - !private ["SZ", "init"]
 - !private ["s13SignedNumericP", ""]
 - !private ["s13SignedNumericP", "init"]
 - !private ["Sx", ""]
 - !private ["Sx", "init"]
-- !private ["SS", "init"]
 - !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
 - !private ["s27StringInterpolationProtocolP", "appendLiteral"]
 - !private ["s27StringInterpolationProtocolP", "init"]
-- !private ["Sy", "init"]
 - !private ["14_Today_s_tasks4TaskC", ""]
 - !private ["14_Today_s_tasks4TaskC", "duration"]
 - !private ["14_Today_s_tasks4TaskC", "fetchRequest"]
 - !private ["14_Today_s_tasks4TaskC", "init"]
 - !private ["14_Today_s_tasks4TaskC", "isCompleted"]
 - !private ["14_Today_s_tasks4TaskC", "title"]
-- !private ["s16TextOutputStreamP", ""]
 - !private ["s16TextOutputStreamP", "appendInterpolation"]
 - !private ["s16TextOutputStreamP", "appendLiteral"]
-- !private ["s16TextOutputStreamP", "init"]
-- !private ["s20TextOutputStreamableP", ""]
-- !private ["s20TextOutputStreamableP", "init"]
 - !private ["s14_ArrayProtocolP", "append"]
 - !private ["s14_ArrayProtocolP", "filter"]
+- !private ["s14_ArrayProtocolP", "insert"]
 - !private ["s30_CustomPlaygroundQuickLookableP", "init"]
 - !private ["s24_DestructorSafeContainerP", "append"]
 - !private ["s24_DestructorSafeContainerP", "filter"]
+- !private ["s24_DestructorSafeContainerP", "insert"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
-- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
-- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
-- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
-- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s19_HasContiguousBytesP", "append"]
 - !private ["s19_HasContiguousBytesP", "filter"]
-- !private ["s19_HasContiguousBytesP", "init"]
+- !private ["s19_HasContiguousBytesP", "insert"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "append"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "filter"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "insert"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delete"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "duration"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "fetch"]
@@ -322,6 +332,7 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "append"]
 - !private ["s21_ObjectiveCBridgeableP", "filter"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "insert"]
 depends-nominal:
 - !private "s18AdditiveArithmeticP"
 - !private "Sa"
@@ -329,6 +340,7 @@ depends-nominal:
 - !private "Sz"
 - !private "8CloudKit21CKRecordValueProtocolP"
 - !private "s7CVarArgP"
+- "14_Today_s_tasks8CellDataV"
 - !private "Sl"
 - !private "SL"
 - !private "10Foundation15ContiguousBytesP"
@@ -342,17 +354,13 @@ depends-nominal:
 - !private "SQ"
 - !private "s5ErrorP"
 - "s25ExpressibleByArrayLiteralP"
-- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - !private "s27ExpressibleByIntegerLiteralP"
 - !private "s32ExpressibleByStringInterpolationP"
-- !private "s26ExpressibleByStringLiteralP"
-- !private "s33ExpressibleByUnicodeScalarLiteralP"
 - !private "s17FixedWidthIntegerP"
 - !private "SH"
 - !private "s12IdentifiableP"
 - !private "s5Int16V"
 - !private "s25LosslessStringConvertibleP"
-- !private "s10MirrorPathP"
 - "14_Today_s_tasks5ModelC"
 - !private "SM"
 - !private "10Foundation19MutableDataProtocolP"
@@ -375,20 +383,15 @@ depends-nominal:
 - !private "SZ"
 - !private "s13SignedNumericP"
 - !private "Sx"
-- !private "SS"
 - !private "s27StringInterpolationProtocolP"
-- !private "Sy"
 - !private "14_Today_s_tasks4TaskC"
 - !private "s16TextOutputStreamP"
-- !private "s20TextOutputStreamableP"
 - !private "s14_ArrayProtocolP"
 - !private "s30_CustomPlaygroundQuickLookableP"
 - !private "s24_DestructorSafeContainerP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
-- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s35_ExpressibleByBuiltinIntegerLiteralP"
 - "s34_ExpressibleByBuiltinStringLiteralP"
-- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - !private "s19_HasContiguousBytesP"
 - !private "s35_HasCustomAnyHashableRepresentationP"
 - !private "10Foundation27_KeyValueCodingAndObservingP"
@@ -430,4 +433,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.1.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.1.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "e4bc0552ef1595e540091c4e100d3031"
+interface-hash: "bf8ef67a227acb46628059568b7689ed"

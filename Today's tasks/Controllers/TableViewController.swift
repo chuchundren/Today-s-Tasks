@@ -13,17 +13,12 @@ class TableViewController: UITableViewController {
     
    let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    let model = Model()
+    let dataManager = DataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        model.fetch(from: managedContext)
-        
-        model.arrayForSection {_ in
-            print("completion")
-            tableView.reloadData()
-        }
+        dataManager.fetch(from: managedContext)
 
     }
     
@@ -83,19 +78,19 @@ class TableViewController: UITableViewController {
         switch section {
         case 0:
             let taskToDelete = today[row]
-            model.delete(taskToDelete, in: managedContext)
+            dataManager.delete(taskToDelete, in: managedContext)
             today.remove(at: row)
         case 1:
             let taskToDelete = thisWeek[row]
-            model.delete(taskToDelete, in: managedContext)
+            dataManager.delete(taskToDelete, in: managedContext)
             thisWeek.remove(at: row)
         case 2:
             let taskToDelete = thisMonth[row]
-            model.delete(taskToDelete, in: managedContext)
+            dataManager.delete(taskToDelete, in: managedContext)
             thisMonth.remove(at: row)
         case 3:
             let taskToDelete = completed[row]
-            model.delete(taskToDelete, in: managedContext)
+            dataManager.delete(taskToDelete, in: managedContext)
             completed.remove(at: row)
         default:
             return
@@ -147,26 +142,22 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if self.tableView(tableView, numberOfRowsInSection: section) > 0 {
-            return 32
-        } else {
-            return 0
-        }
+        return 32
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? TableViewHeader ?? TableViewHeader(reuseIdentifier: "header")
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? ExpandableTableViewHeader ?? ExpandableTableViewHeader(reuseIdentifier: "header")
         
-        if self.tableView(tableView, numberOfRowsInSection: section) > 0 {
-            header.titleLabel.text = model.sectionTitles[section]
-            return header
-        } else {
-            return nil
-        }
+        header.titleLabel.text = dataManager.sectionTitles[section]
+        header.rotateArrow(expanded: t[section].isExpanded)
+        header.section = section
+        header.delegate = self
+        return header
     }
     
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if t[section].isExpanded == true {
             switch section {
             case 0:
                 return today.count
@@ -179,28 +170,31 @@ class TableViewController: UITableViewController {
             default:
                 return 0
             }
+        } else {
+            return 0
+        }
     }
     
     // MARK: - Cell
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TaskTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tasksCell", for: indexPath)
     
         switch indexPath.section {
         case 0:
-            cell.taskTitleLabel.text = today[indexPath.row].title
-            cell.taskTitleLabel.textColor = UIColor.black
+            cell.textLabel?.text = today[indexPath.row].title
+            cell.textLabel?.textColor = UIColor.black
         case 1:
-            cell.taskTitleLabel.text = thisWeek[indexPath.row].title
-            cell.taskTitleLabel.textColor = UIColor.black
+            cell.textLabel?.text = thisWeek[indexPath.row].title
+            cell.textLabel?.textColor = UIColor.black
         case 2:
-            cell.taskTitleLabel.text = thisMonth[indexPath.row].title
-            cell.taskTitleLabel.textColor = UIColor.black
+            cell.textLabel?.text = thisMonth[indexPath.row].title
+            cell.textLabel?.textColor = UIColor.black
         case 3:
-            cell.taskTitleLabel.text = completed[indexPath.row].title
-            cell.taskTitleLabel.textColor = UIColor.lightGray
+            cell.textLabel?.text = completed[indexPath.row].title
+            cell.textLabel?.textColor = UIColor.lightGray
         default:
-            cell.taskTitleLabel.text = "nil"
+            cell.textLabel?.text = "nil"
         }
         
         return cell
@@ -264,3 +258,12 @@ class TableViewController: UITableViewController {
 }
 
 
+extension TableViewController: ExpandableTableViewHeaderDelegate {
+    func toggleSection(header: ExpandableTableViewHeader, section: Int) {
+        let expanded = !t[section].isExpanded
+        
+        t[section].isExpanded = expanded
+        header.rotateArrow(expanded: expanded)
+        tableView.reloadSections(NSIndexSet(index: section) as IndexSet, with: .automatic)
+    }
+}

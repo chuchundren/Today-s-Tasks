@@ -58,7 +58,7 @@ depends-member:
 - ["14_Today_s_tasks11AppDelegateC", "persistentContainer"]
 - ["14_Today_s_tasks11AppDelegateC", "saveContext"]
 - ["14_Today_s_tasks11AppDelegateC", "window"]
-- !private ["SK", ""]
+- ["SK", ""]
 - ["s7CVarArgP", "ConnectionOptions"]
 - ["s7CVarArgP", "LaunchOptionsKey"]
 - ["s7CVarArgP", "NSPersistentContainer"]
@@ -87,8 +87,8 @@ depends-member:
 - ["s7CVarArgP", "userInfo"]
 - !private ["s7CVarArgP", "viewContext"]
 - ["s7CVarArgP", "window"]
-- !private ["Sl", ""]
-- !private ["SL", ""]
+- ["Sl", ""]
+- ["SL", ""]
 - ["s28CustomDebugStringConvertibleP", "ConnectionOptions"]
 - ["s28CustomDebugStringConvertibleP", "LaunchOptionsKey"]
 - ["s28CustomDebugStringConvertibleP", "NSPersistentContainer"]
@@ -178,12 +178,12 @@ depends-member:
 - !private ["SQ", "viewContext"]
 - ["SQ", "window"]
 - ["s5ErrorP", "userInfo"]
-- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
 - ["s32ExpressibleByStringInterpolationP", "StringInterpolation"]
-- !private ["s32ExpressibleByStringInterpolationP", ""]
+- ["s32ExpressibleByStringInterpolationP", ""]
 - ["s32ExpressibleByStringInterpolationP", "init"]
-- !private ["s26ExpressibleByStringLiteralP", ""]
-- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- ["s26ExpressibleByStringLiteralP", ""]
+- ["s33ExpressibleByUnicodeScalarLiteralP", ""]
 - ["SH", "ConnectionOptions"]
 - ["SH", "LaunchOptionsKey"]
 - ["SH", "NSPersistentContainer"]
@@ -212,7 +212,7 @@ depends-member:
 - ["SH", "userInfo"]
 - !private ["SH", "viewContext"]
 - ["SH", "window"]
-- !private ["s25LosslessStringConvertibleP", ""]
+- ["s25LosslessStringConvertibleP", ""]
 - ["So8NSCodingP", ""]
 - !private ["So8NSCodingP", "hasChanges"]
 - !private ["So8NSCodingP", "init"]
@@ -266,11 +266,16 @@ depends-member:
 - !private ["So8NSObjectC", "viewContext"]
 - ["So8NSObjectC", "window"]
 - ["So8NSObjectP", "$__lazy_storage_$_persistentContainer"]
+- ["So8NSObjectP", "Bool"]
 - ["So8NSObjectP", "ConnectionOptions"]
 - ["So8NSObjectP", "LaunchOptionsKey"]
+- ["So8NSObjectP", "NSError"]
 - ["So8NSObjectP", "NSPersistentContainer"]
 - ["So8NSObjectP", "Set"]
+- ["So8NSObjectP", "UIApplication"]
+- ["So8NSObjectP", "UIScene"]
 - ["So8NSObjectP", "UISceneConfiguration"]
+- ["So8NSObjectP", "UISceneSession"]
 - ["So8NSObjectP", ""]
 - ["So8NSObjectP", "__lazy_storage_$_persistentContainer"]
 - ["So8NSObjectP", "application"]
@@ -306,14 +311,14 @@ depends-member:
 - !private ["So14NSSecureCodingP", "init"]
 - !private ["So14NSSecureCodingP", "role"]
 - ["So14NSSecureCodingP", "userInfo"]
-- !private ["ST", ""]
+- ["ST", ""]
 - ["s27StringInterpolationProtocolP", "appendInterpolation"]
 - ["s27StringInterpolationProtocolP", "appendLiteral"]
 - ["s27StringInterpolationProtocolP", "init"]
-- !private ["s16TextOutputStreamP", ""]
+- ["s16TextOutputStreamP", ""]
 - ["s16TextOutputStreamP", "appendInterpolation"]
 - ["s16TextOutputStreamP", "appendLiteral"]
-- !private ["s20TextOutputStreamableP", ""]
+- ["s20TextOutputStreamableP", ""]
 - ["So13UIApplicationC", "LaunchOptionsKey"]
 - ["So21UIApplicationDelegateP", "$__lazy_storage_$_persistentContainer"]
 - ["So21UIApplicationDelegateP", "NSPersistentContainer"]
@@ -338,11 +343,16 @@ depends-member:
 - ["So21UIApplicationDelegateP", "saveContext"]
 - ["So21UIApplicationDelegateP", "window"]
 - ["So30UIPasteConfigurationSupportingP", "$__lazy_storage_$_persistentContainer"]
+- ["So30UIPasteConfigurationSupportingP", "Bool"]
 - ["So30UIPasteConfigurationSupportingP", "ConnectionOptions"]
 - ["So30UIPasteConfigurationSupportingP", "LaunchOptionsKey"]
+- ["So30UIPasteConfigurationSupportingP", "NSError"]
 - ["So30UIPasteConfigurationSupportingP", "NSPersistentContainer"]
 - ["So30UIPasteConfigurationSupportingP", "Set"]
+- ["So30UIPasteConfigurationSupportingP", "UIApplication"]
+- ["So30UIPasteConfigurationSupportingP", "UIScene"]
 - ["So30UIPasteConfigurationSupportingP", "UISceneConfiguration"]
+- ["So30UIPasteConfigurationSupportingP", "UISceneSession"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - ["So30UIPasteConfigurationSupportingP", "__lazy_storage_$_persistentContainer"]
 - ["So30UIPasteConfigurationSupportingP", "application"]
@@ -394,11 +404,16 @@ depends-member:
 - ["So11UIResponderC", "saveContext"]
 - ["So11UIResponderC", "window"]
 - ["So30UIResponderStandardEditActionsP", "$__lazy_storage_$_persistentContainer"]
+- ["So30UIResponderStandardEditActionsP", "Bool"]
 - ["So30UIResponderStandardEditActionsP", "ConnectionOptions"]
 - ["So30UIResponderStandardEditActionsP", "LaunchOptionsKey"]
+- ["So30UIResponderStandardEditActionsP", "NSError"]
 - ["So30UIResponderStandardEditActionsP", "NSPersistentContainer"]
 - ["So30UIResponderStandardEditActionsP", "Set"]
+- ["So30UIResponderStandardEditActionsP", "UIApplication"]
+- ["So30UIResponderStandardEditActionsP", "UIScene"]
 - ["So30UIResponderStandardEditActionsP", "UISceneConfiguration"]
+- ["So30UIResponderStandardEditActionsP", "UISceneSession"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - ["So30UIResponderStandardEditActionsP", "__lazy_storage_$_persistentContainer"]
 - ["So30UIResponderStandardEditActionsP", "application"]
@@ -423,11 +438,16 @@ depends-member:
 - !private ["So20UISceneConfigurationC", "init"]
 - !private ["So14UISceneSessionC", "role"]
 - ["So23UIUserActivityRestoringP", "$__lazy_storage_$_persistentContainer"]
+- ["So23UIUserActivityRestoringP", "Bool"]
 - ["So23UIUserActivityRestoringP", "ConnectionOptions"]
 - ["So23UIUserActivityRestoringP", "LaunchOptionsKey"]
+- ["So23UIUserActivityRestoringP", "NSError"]
 - ["So23UIUserActivityRestoringP", "NSPersistentContainer"]
 - ["So23UIUserActivityRestoringP", "Set"]
+- ["So23UIUserActivityRestoringP", "UIApplication"]
+- ["So23UIUserActivityRestoringP", "UIScene"]
 - ["So23UIUserActivityRestoringP", "UISceneConfiguration"]
+- ["So23UIUserActivityRestoringP", "UISceneSession"]
 - ["So23UIUserActivityRestoringP", ""]
 - ["So23UIUserActivityRestoringP", "__lazy_storage_$_persistentContainer"]
 - ["So23UIUserActivityRestoringP", "application"]
@@ -449,10 +469,10 @@ depends-member:
 - ["So23UIUserActivityRestoringP", "saveContext"]
 - ["So23UIUserActivityRestoringP", "window"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
-- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
 - ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
 - ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
-- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
 - ["10Foundation27_KeyValueCodingAndObservingP", "ConnectionOptions"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "LaunchOptionsKey"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "NSPersistentContainer"]
@@ -511,21 +531,21 @@ depends-member:
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "window"]
 depends-nominal:
 - "14_Today_s_tasks11AppDelegateC"
-- !private "SK"
+- "SK"
 - "s7CVarArgP"
-- !private "Sl"
-- !private "SL"
+- "Sl"
+- "SL"
 - "s28CustomDebugStringConvertibleP"
 - "s23CustomStringConvertibleP"
 - "s26DefaultStringInterpolationV"
 - "SQ"
 - "s5ErrorP"
-- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - "s32ExpressibleByStringInterpolationP"
-- !private "s26ExpressibleByStringLiteralP"
-- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
 - "SH"
-- !private "s25LosslessStringConvertibleP"
+- "s25LosslessStringConvertibleP"
 - "So8NSCodingP"
 - "So9NSCopyingP"
 - "So7NSErrorC"
@@ -535,10 +555,10 @@ depends-nominal:
 - "So8NSObjectP"
 - "So21NSPersistentContainerC"
 - "So14NSSecureCodingP"
-- !private "ST"
+- "ST"
 - "s27StringInterpolationProtocolP"
 - "s16TextOutputStreamP"
-- !private "s20TextOutputStreamableP"
+- "s20TextOutputStreamableP"
 - "So13UIApplicationC"
 - "So21UIApplicationDelegateP"
 - "So30UIPasteConfigurationSupportingP"
@@ -549,10 +569,10 @@ depends-nominal:
 - !private "So14UISceneSessionC"
 - "So23UIUserActivityRestoringP"
 - !private "s35_ExpressibleByBuiltinBooleanLiteralP"
-- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - "s35_ExpressibleByBuiltinIntegerLiteralP"
 - "s34_ExpressibleByBuiltinStringLiteralP"
-- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - "10Foundation27_KeyValueCodingAndObservingP"
 - "10Foundation37_KeyValueCodingAndObservingPublishingP"
 depends-dynamic-lookup:

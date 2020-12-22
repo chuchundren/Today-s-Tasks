@@ -26,7 +26,6 @@ depends-top-level:
 - "UIWindowSceneDelegate"
 depends-member:
 - !private ["14_Today_s_tasks11AppDelegateC", "saveContext"]
-- ["SK", ""]
 - ["s7CVarArgP", "ConnectionOptions"]
 - !private ["s7CVarArgP", "UIApplication"]
 - ["s7CVarArgP", ""]
@@ -43,8 +42,6 @@ depends-member:
 - ["s7CVarArgP", "stateRestorationActivityForScene"]
 - ["s7CVarArgP", "window"]
 - ["s7CVarArgP", "windowScene"]
-- ["Sl", ""]
-- ["SL", ""]
 - ["s28CustomDebugStringConvertibleP", "ConnectionOptions"]
 - !private ["s28CustomDebugStringConvertibleP", "UIApplication"]
 - ["s28CustomDebugStringConvertibleP", ""]
@@ -93,10 +90,6 @@ depends-member:
 - ["SQ", "stateRestorationActivityForScene"]
 - ["SQ", "window"]
 - ["SQ", "windowScene"]
-- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
-- ["s32ExpressibleByStringInterpolationP", ""]
-- ["s26ExpressibleByStringLiteralP", ""]
-- ["s33ExpressibleByUnicodeScalarLiteralP", ""]
 - ["SH", "ConnectionOptions"]
 - !private ["SH", "UIApplication"]
 - ["SH", ""]
@@ -113,7 +106,6 @@ depends-member:
 - ["SH", "stateRestorationActivityForScene"]
 - ["SH", "window"]
 - ["SH", "windowScene"]
-- ["s25LosslessStringConvertibleP", ""]
 - ["So8NSCodingP", ""]
 - !private ["So8NSObjectC", "AppDelegate"]
 - ["So8NSObjectC", "ConnectionOptions"]
@@ -137,7 +129,6 @@ depends-member:
 - ["So8NSObjectC", "stateRestorationActivityForScene"]
 - ["So8NSObjectC", "window"]
 - ["So8NSObjectC", "windowScene"]
-- !private ["So8NSObjectP", "AppDelegate"]
 - ["So8NSObjectP", "ConnectionOptions"]
 - !private ["So8NSObjectP", "UIApplication"]
 - ["So8NSObjectP", "UIScene"]
@@ -179,14 +170,9 @@ depends-member:
 - ["14_Today_s_tasks13SceneDelegateC", "stateRestorationActivityForScene"]
 - ["14_Today_s_tasks13SceneDelegateC", "window"]
 - ["14_Today_s_tasks13SceneDelegateC", "windowScene"]
-- ["ST", ""]
-- ["s16TextOutputStreamP", ""]
-- ["s20TextOutputStreamableP", ""]
 - !private ["So13UIApplicationC", "delegate"]
 - !private ["So13UIApplicationC", "shared"]
 - ["So21UIApplicationDelegateP", "saveContext"]
-- ["So18UIFocusEnvironmentP", ""]
-- !private ["So30UIPasteConfigurationSupportingP", "AppDelegate"]
 - ["So30UIPasteConfigurationSupportingP", "ConnectionOptions"]
 - !private ["So30UIPasteConfigurationSupportingP", "UIApplication"]
 - ["So30UIPasteConfigurationSupportingP", "UIScene"]
@@ -231,7 +217,6 @@ depends-member:
 - ["So11UIResponderC", "stateRestorationActivityForScene"]
 - ["So11UIResponderC", "window"]
 - ["So11UIResponderC", "windowScene"]
-- !private ["So30UIResponderStandardEditActionsP", "AppDelegate"]
 - ["So30UIResponderStandardEditActionsP", "ConnectionOptions"]
 - !private ["So30UIResponderStandardEditActionsP", "UIApplication"]
 - ["So30UIResponderStandardEditActionsP", "UIScene"]
@@ -270,7 +255,6 @@ depends-member:
 - ["So15UISceneDelegateP", "stateRestorationActivityForScene"]
 - ["So15UISceneDelegateP", "window"]
 - ["So15UISceneDelegateP", "windowScene"]
-- !private ["So23UIUserActivityRestoringP", "AppDelegate"]
 - ["So23UIUserActivityRestoringP", "ConnectionOptions"]
 - !private ["So23UIUserActivityRestoringP", "UIApplication"]
 - ["So23UIUserActivityRestoringP", "UIScene"]
@@ -307,8 +291,6 @@ depends-member:
 - ["So21UIWindowSceneDelegateP", "stateRestorationActivityForScene"]
 - ["So21UIWindowSceneDelegateP", "window"]
 - ["So21UIWindowSceneDelegateP", "windowScene"]
-- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
-- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
 - ["10Foundation27_KeyValueCodingAndObservingP", "ConnectionOptions"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIApplication"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
@@ -343,29 +325,17 @@ depends-member:
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "windowScene"]
 depends-nominal:
 - !private "14_Today_s_tasks11AppDelegateC"
-- "SK"
 - "s7CVarArgP"
-- "Sl"
-- "SL"
 - "s28CustomDebugStringConvertibleP"
 - "s23CustomStringConvertibleP"
 - "SQ"
-- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
-- "s32ExpressibleByStringInterpolationP"
-- "s26ExpressibleByStringLiteralP"
-- "s33ExpressibleByUnicodeScalarLiteralP"
 - "SH"
-- "s25LosslessStringConvertibleP"
 - "So8NSCodingP"
 - "So8NSObjectC"
 - "So8NSObjectP"
 - "14_Today_s_tasks13SceneDelegateC"
-- "ST"
-- "s16TextOutputStreamP"
-- "s20TextOutputStreamableP"
 - !private "So13UIApplicationC"
 - "So21UIApplicationDelegateP"
-- "So18UIFocusEnvironmentP"
 - "So30UIPasteConfigurationSupportingP"
 - "So11UIResponderC"
 - "So30UIResponderStandardEditActionsP"
@@ -373,8 +343,6 @@ depends-nominal:
 - "So15UISceneDelegateP"
 - "So23UIUserActivityRestoringP"
 - "So21UIWindowSceneDelegateP"
-- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
-- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
 - "10Foundation27_KeyValueCodingAndObservingP"
 - "10Foundation37_KeyValueCodingAndObservingPublishingP"
 depends-dynamic-lookup:

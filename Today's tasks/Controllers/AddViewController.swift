@@ -15,7 +15,7 @@ class AddViewController: UIViewController {
     
     var previousVC: TableViewController!
     
-    let model = Model()
+    let dataManager = DataManager()
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
@@ -74,10 +74,8 @@ class AddViewController: UIViewController {
         guard textField.text != nil && textField.text != "" else { return }
         guard let taskToSave = textField.text else { return }
         
-        model.save(taskToSave, duration: durationControl.selectedSegmentIndex, managedContext: managedContext) {_ in
-            previousVC.tableView.reloadData()
-        }
-        previousVC.tableView.reloadData()
+        dataManager.save(taskToSave, duration: durationControl.selectedSegmentIndex, managedContext: managedContext)
+        //previousVC.tableView.reloadData()
         navigationController?.popViewController(animated: true)
     }
     

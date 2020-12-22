@@ -248,6 +248,15 @@ SWIFT_CLASS("_TtC14_Today_s_tasks11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITapGestureRecognizer;
+
+SWIFT_CLASS("_TtC14_Today_s_tasks25ExpandableTableViewHeader")
+@interface ExpandableTableViewHeader : UITableViewHeaderFooterView
+- (nonnull instancetype)initWithReuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)tapHeaderWithGestureRecognizer:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
+@end
+
 @class UIWindow;
 @class UIScene;
 
@@ -288,12 +297,6 @@ SWIFT_CLASS("_TtC14_Today_s_tasks19TableViewController")
 @end
 
 
-SWIFT_CLASS("_TtC14_Today_s_tasks15TableViewHeader")
-@interface TableViewHeader : UITableViewHeaderFooterView
-- (nonnull instancetype)initWithReuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class NSEntityDescription;
 @class NSManagedObjectContext;
 
@@ -310,16 +313,6 @@ SWIFT_CLASS_NAMED("Task")
 @property (nonatomic, copy) NSString * _Nullable title;
 @end
 
-@class UILabel;
-
-SWIFT_CLASS("_TtC14_Today_s_tasks17TaskTableViewCell")
-@interface TaskTableViewCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified taskTitleLabel;
-- (void)awakeFromNib;
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
-- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  DataManager.swift
 //   Today's tasks
 //
 //  Created by Дарья on 15.12.2020.
@@ -9,34 +9,42 @@
 import Foundation
 import CoreData
 
-var t: [[Task]] = []
+struct CellData {
+    var isExpanded: Bool
+    var tasks: [Task]
+}
+
+var t: [CellData] = []
 var today: [Task] = []
 var thisWeek: [Task] = []
 var thisMonth: [Task] = []
 var completed: [Task] = []
 
-class Model {
+class DataManager {
     
     var tasks: [Task] = []
     
     var sectionTitles = ["Today", "This week", "This month", "Completed tasks"]
     
-    func arrayForSection(completion: (Bool) -> Void) {
+    func arrayForSection() {
         let notCompleted = tasks.filter{($0.isCompleted == false)}
         
             today = notCompleted.filter({$0.duration == 0})
-            t.append(today)
+            let todayCell = CellData(isExpanded: true, tasks: today)
+            t.append(todayCell)
 
             thisWeek = notCompleted.filter({$0.duration == 1})
-            t.append(thisWeek)
+            let thisWeekCell = CellData(isExpanded: true, tasks: thisWeek)
+            t.append(thisWeekCell)
 
             thisMonth = notCompleted.filter({$0.duration == 2})
-            t.append(thisMonth)
+            let thisMonthCell = CellData(isExpanded: true, tasks: thisMonth)
+            t.append(thisMonthCell)
 
             completed = tasks.filter({$0.isCompleted == true})
-            t.append(completed)
+            let completedCell = CellData(isExpanded: true, tasks: completed)
+            t.append(completedCell)
     
-        completion(true)
     }
     
     func fetch(from managedContext: NSManagedObjectContext) {
@@ -53,10 +61,12 @@ class Model {
             
             tasks = try managedContext.fetch(request)
             
+            arrayForSection()
             print("Fetching succeeded")
         } catch let error as NSError {
             print("could not fetch. \(error)")
         }
+
     }
     
     
@@ -73,7 +83,7 @@ class Model {
     }
     
     
-    func save(_ title: String, duration: Int, managedContext: NSManagedObjectContext, completion: (Bool) -> ()) {
+    func save(_ title: String, duration: Int, managedContext: NSManagedObjectContext) {
         
         let task = Task(context: managedContext)
         task.title = title
@@ -83,20 +93,19 @@ class Model {
         do {
             try managedContext.save()
             
-            tasks.append(task)
-//            switch task.duration {
-//            case 0:
-//                today.append(task)
-//            case 1:
-//                thisWeek.append(task)
-//            case 2:
-//                thisMonth.append(task)
-//            default:
-//                print("error: unknown duration: \(task.duration)")
-//            }
-            print("success!! task is saved: \(String(describing: task.title))")
-            
-            completion(true)
+            switch task.duration {
+            case 0:
+                today.insert(task, at: 0)
+            case 1:
+                thisWeek.insert(task, at: 0)
+            case 2:
+                thisMonth.insert(task, at: 0)
+            default:
+                print("error: unknown duration: \(task.duration)")
+            }
+
+            print("success!! task is saved: \(task.title!)")
+        
         } catch let error as NSError {
             print("could not save. \(error), \(error.userInfo)")
         }
